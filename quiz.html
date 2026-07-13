@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz interactivo de Cálculo Integral del portafolio académico de Justin Saldaña.">
+    <title>Quiz de Cálculo Integral | Justin Saldaña</title>
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Estilos generales del portafolio -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Estilos exclusivos del quiz -->
+    <link href="css/quiz.css" rel="stylesheet">
+</head>
+
+<body id="page-top" class="pagina-quiz">
+
+    <a class="menu-toggle rounded" href="#" aria-label="Abrir o cerrar el menú">
+        <i class="fas fa-bars"></i>
+    </a>
+
+    <nav id="sidebar-wrapper" aria-label="Menú del quiz">
+        <ul class="sidebar-nav">
+
+            <li class="sidebar-brand">
+                <a href="index.html">
+                    <span class="sidebar-brand-etiqueta">PORTAFOLIO ACADÉMICO</span>
+                    <strong>Cálculo Integral</strong>
+                    <small>Justin Saldaña</small>
+                </a>
+            </li>
+
+            <li class="sidebar-separador">
+                <span>NAVEGACIÓN</span>
+            </li>
+
+            <li class="sidebar-nav-item">
+                <a href="index.html">
+                    <span class="menu-icono"><i class="fas fa-house"></i></span>
+                    <span class="menu-texto">Página principal</span>
+                </a>
+            </li>
+
+            <li class="sidebar-nav-item">
+                <a href="primer-parcial.html">
+                    <span class="menu-icono"><i class="fas fa-calculator"></i></span>
+                    <span class="menu-texto">Primer parcial</span>
+                </a>
+            </li>
+
+            <li class="sidebar-nav-item">
+                <a href="segundo-parcial.html">
+                    <span class="menu-icono"><i class="fas fa-chart-area"></i></span>
+                    <span class="menu-texto">Segundo parcial</span>
+                </a>
+            </li>
+
+            <li class="sidebar-nav-item active-page">
+                <a href="#inicio-quiz" aria-current="page">
+                    <span class="menu-icono"><i class="fas fa-brain"></i></span>
+                    <span class="menu-texto">Evaluación interactiva</span>
+                </a>
+            </li>
+
+            <li class="sidebar-nav-item">
+                <a href="#contenedor-quiz">
+                    <span class="menu-icono"><i class="fas fa-play"></i></span>
+                    <span class="menu-texto">Iniciar quiz</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <header class="cabecera-quiz d-flex align-items-center" id="inicio-quiz">
+        <div class="container px-4 px-lg-5 text-center">
+
+            <span class="etiqueta-quiz">EVALUACIÓN INTERACTIVA</span>
+
+            <h1>Quiz de Cálculo Integral</h1>
+
+            <p>
+                Comprueba tus conocimientos sobre los contenidos del primer y segundo parcial.
+            </p>
+
+            <div class="datos-cabecera-quiz">
+                <span><i class="fas fa-list-ol"></i> 10 preguntas</span>
+                <span><i class="fas fa-clock"></i> Sin límite de tiempo</span>
+                <span><i class="fas fa-star"></i> Resultado inmediato</span>
+            </div>
+
+            <a class="btn btn-portafolio btn-xl mt-4" href="#contenedor-quiz">
+                Comenzar evaluación
+                <i class="fas fa-arrow-down ms-2"></i>
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="instrucciones-quiz">
+            <div class="container px-4 px-lg-5">
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="instruccion-card">
+                            <span>01</span>
+                            <i class="fas fa-mouse-pointer"></i>
+                            <h2>Selecciona</h2>
+                            <p>Elige una respuesta para cada pregunta.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="instruccion-card">
+                            <span>02</span>
+                            <i class="fas fa-circle-check"></i>
+                            <h2>Comprueba</h2>
+                            <p>Recibe una explicación después de responder.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="instruccion-card">
+                            <span>03</span>
+                            <i class="fas fa-trophy"></i>
+                            <h2>Obtén tu resultado</h2>
+                            <p>Consulta tu puntuación y nivel de dominio.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-aplicacion-quiz" id="contenedor-quiz">
+            <div class="container px-4 px-lg-5">
+
+                <div class="quiz-panel" id="quiz-panel">
+
+                    <div class="quiz-pantalla activa" id="pantalla-inicio">
+
+                        <div class="quiz-icono-principal">
+                            <i class="fas fa-brain"></i>
+                        </div>
+
+                        <span class="quiz-subtitulo">DESAFÍO MATEMÁTICO</span>
+
+                        <h2>¿Estás listo para comenzar?</h2>
+
+                        <p>
+                            El cuestionario contiene diez preguntas de opción múltiple.
+                            Las preguntas aparecerán en orden aleatorio y cada respuesta
+                            incluirá una explicación.
+                        </p>
+
+                        <button class="btn btn-primary btn-xl" id="btn-iniciar" type="button">
+                            Iniciar quiz
+                            <i class="fas fa-play ms-2"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="quiz-pantalla" id="pantalla-preguntas">
+
+                        <div class="quiz-cabecera-interna">
+
+                            <div>
+                                <span class="quiz-parcial" id="quiz-parcial">Primer parcial</span>
+                                <p class="quiz-progreso-texto" id="quiz-progreso-texto">
+                                    Pregunta 1 de 10
+                                </p>
+                            </div>
+
+                            <div class="quiz-puntuacion">
+                                <i class="fas fa-star"></i>
+                                <span id="puntuacion-actual">0</span>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="barra-progreso"
+                            role="progressbar"
+                            aria-label="Progreso del cuestionario"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="10"
+                        >
+                            <div class="barra-progreso-valor" id="barra-progreso-valor"></div>
+                        </div>
+
+                        <div class="pregunta-contenido">
+
+                            <span class="pregunta-numero" id="pregunta-numero">01</span>
+
+                            <h2 id="pregunta-texto">Pregunta</h2>
+
+                            <div class="opciones-respuesta" id="opciones-respuesta"></div>
+
+                            <div
+                                class="retroalimentacion"
+                                id="retroalimentacion"
+                                role="status"
+                                aria-live="polite"
+                            ></div>
+
+                            <button
+                                class="btn btn-primary btn-lg btn-siguiente"
+                                id="btn-siguiente"
+                                type="button"
+                                disabled
+                            >
+                                Siguiente pregunta
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="quiz-pantalla" id="pantalla-resultado">
+
+                        <div class="resultado-icono" id="resultado-icono">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+
+                        <span class="quiz-subtitulo">RESULTADO FINAL</span>
+
+                        <h2 id="resultado-titulo">¡Evaluación completada!</h2>
+
+                        <div class="resultado-circulo">
+                            <strong id="resultado-porcentaje">0%</strong>
+                            <span id="resultado-fraccion">0 de 10</span>
+                        </div>
+
+                        <p class="resultado-mensaje" id="resultado-mensaje"></p>
+
+                        <div class="resultado-resumen">
+
+                            <div>
+                                <i class="fas fa-circle-check"></i>
+                                <strong id="respuestas-correctas">0</strong>
+                                <span>Correctas</span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-circle-xmark"></i>
+                                <strong id="respuestas-incorrectas">0</strong>
+                                <span>Incorrectas</span>
+                            </div>
+
+                        </div>
+
+                        <div class="resultado-acciones">
+
+                            <button class="btn btn-primary btn-xl" id="btn-reiniciar" type="button">
+                                Intentar nuevamente
+                                <i class="fas fa-rotate-right ms-2"></i>
+                            </button>
+
+                            <a class="btn btn-outline-primary btn-xl" href="index.html">
+                                Volver al portafolio
+                                <i class="fas fa-house ms-2"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-portafolio" id="contacto">
+        <div class="container px-4 px-lg-5">
+
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+
+                    <a class="footer-marca" href="index.html#inicio">
+                        <span class="footer-simbolo">∫</span>
+
+                        <span>
+                            <small>PORTAFOLIO ACADÉMICO</small>
+                            <strong>Cálculo Integral</strong>
+                        </span>
+                    </a>
+
+                    <p class="footer-descripcion">
+                        Evaluación interactiva basada en los contenidos desarrollados
+                        durante el primer y segundo parcial.
+                    </p>
+
+                    <div class="footer-estudiante">
+                        <i class="fas fa-user-graduate"></i>
+
+                        <div>
+                            <span>Estudiante</span>
+                            <strong>Justin Saldaña</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-6 col-lg-3">
+
+                    <h2 class="footer-titulo">Navegación</h2>
+
+                    <ul class="footer-enlaces">
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-house"></i>
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="primer-parcial.html">
+                                <i class="fas fa-calculator"></i>
+                                Primer parcial
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="segundo-parcial.html">
+                                <i class="fas fa-chart-area"></i>
+                                Segundo parcial
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-6 col-lg-4">
+
+                    <h2 class="footer-titulo">Actividad</h2>
+
+                    <ul class="footer-enlaces">
+                        <li>
+                            <a href="#contenedor-quiz">
+                                <i class="fas fa-brain"></i>
+                                Iniciar evaluación
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#resumen-parciales">
+                                <i class="fas fa-book-open"></i>
+                                Resumen de parciales
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="footer-inferior">
+                <p>© 2026 Justin Saldaña. Portafolio Académico de Cálculo Integral.</p>
+
+                <a class="footer-subir" href="#page-top">
+                    <span>Volver arriba</span>
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/quiz.js"></script>
+
+</body>
+</html>
